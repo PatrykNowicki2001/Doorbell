@@ -1,21 +1,22 @@
+//controlling LED with a button
 #include <OneButton.h>
 
 int BTN_PIN = 3;
-int LED_PIN = 6;
+int LED_PIN = 6; //use pwm pin 
 int ledstate = 0;
 
-OneButton button(BTN_PIN, true);
+OneButton button(BTN_PIN, true); //create object of a button
 
-void setup() 
+void setup() //set up components
 {
   pinMode(LED_PIN,OUTPUT);
   analogWrite(LED_PIN,ledstate);
-  button.attachClick(turn_on_and_off);
+  button.attachClick(turn_on_and_off); //all the actions are taking place in the additional function (not in the loop) - very convenient
   Serial.begin(9600);
 }
 void loop()
 {
-  button.tick();
+  button.tick(); // remember to always check for the button ticks
 }
 void turn_on_and_off()
 {
