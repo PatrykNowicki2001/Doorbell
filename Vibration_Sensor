@@ -1,6 +1,6 @@
 //This sketch is allowing us to change state of LED (turning it on and off) by hitting the breadboard
 int VIB_PIN = 7; //connect SW-420 sensor to desired pin
-int LED_PIN = 2; //connect SW-420 sensor to desired pin
+int LED_PIN = 2; //connect LED diode to desired pwm pin
 int sensor_state = 1; //initialising sensor state variable ( =1 is not needed)
 int diode_state = 1; //initialising LED state (starting from LED being on)
 void setup() 
