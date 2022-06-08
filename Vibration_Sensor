@@ -13,7 +13,7 @@ void setup()
 void loop()
 {
   Serial.print("Vibration status: "); //printing every 100ms "Vibration status:" in serial monitor
-  sensor_state = digitalRead(Vibration_PIN); //checking if sensor was hit
+  sensor_state = digitalRead(VIB_PIN); //checking if sensor was hit
   if (sensor_state == 1)  //if sensor is hit- HIGH on the D0 PIN
   {
     Serial.println("Sensing vibration");  //printing that it is sensing vibration and changing diode state to opposite
