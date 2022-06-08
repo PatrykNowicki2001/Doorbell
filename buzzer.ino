@@ -1,3 +1,9 @@
+//in this file we can start a song with one button and stop it with another (later replace second button for the vibration module)
+//and replace first button when message from transmitter is received
+
+// !!LATER!! maybe use blinking diode when music is playing??
+
+//playing pirates of the caribbean soundtrack
 #include <OneButton.h>
 
 
