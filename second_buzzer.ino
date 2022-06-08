@@ -1,3 +1,7 @@
+//this code enables us to change between two sounds on the buzzer and stop the music
+//by using vibration sensor
+
+
 #include <OneButton.h>
 #include "notes.h"
 const int BTN_PIN = 2;
