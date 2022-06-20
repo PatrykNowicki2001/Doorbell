@@ -32,6 +32,6 @@ void funkcja()
   analogWrite(led_pin, 50); // zapalamy LED
   vw_send((uint8_t *)msg, strlen(msg));// wysyłamy 
   vw_wait_tx(); 
-  Serial.println("dupa");
+  Serial.println("package sent");
   analogWrite(led_pin, 0); // gasimy LED
 }
