@@ -25,25 +25,21 @@ void setup()
  
 void loop()
 {
-  // częśc wymagana do poprawnego działania biblioteki
-    uint8_t buf[VW_MAX_MESSAGE_LEN];
-    uint8_t buflen = VW_MAX_MESSAGE_LEN;
+    
+  uint8_t buf[VW_MAX_MESSAGE_LEN];
+  uint8_t buflen = VW_MAX_MESSAGE_LEN;
  
-    if (vw_get_message(buf, &buflen)) // jeśli odbierzemy dane
-    {
-  int i;
-        String wiadomosc;
- 
-        digitalWrite(led_pin, HIGH); //zapalamy LED
-          
-  for (i = 0; i < buflen; i++) // w pętli zczytujemy dane z odbiornika
+  if (vw_get_message(buf, &buflen)) // if we get data
   {
-            wiadomosc+=char(buf[i]);
+  int i;
+  String wiadomosc;       
+  for (i = 0; i < buflen; i++) // we look for data from receiver
+  {
+        wiadomosc+=char(buf[i]);
   }
   Serial.println(wiadomosc);
   music();
-        digitalWrite(led_pin, LOW); // gasimy LED
-    }
+  }
 }
 
 void music()
