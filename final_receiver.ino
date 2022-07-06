@@ -19,7 +19,7 @@ void setup()
     vw_set_rx_pin(receive_pin);
     vw_setup(2000);   
     vw_rx_start(); // startujemy odbieranie danych (uruchamiamy)
- 
+    pinMode(SEN_PIN, INPUT)
     pinMode(led_pin, OUTPUT);
 }
  
@@ -60,8 +60,18 @@ void music()
     }
     tone(buzzer, melody1[thisNote], noteDuration * 0.9);
     sensor_state = digitalRead(SEN_PIN);
+    if(sensor_state==1)
+    {
+      Serial.println("music stopped");
+      break;
+    }
     delay(noteDuration);
     sensor_state = digitalRead(SEN_PIN);
+    if(sensor_state==1)
+    {
+      Serial.println("music stopped");
+      break;
+    }
     noTone(buzzer);
     sensor_state = digitalRead(SEN_PIN);
     if(sensor_state==1)
